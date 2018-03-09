@@ -34,13 +34,13 @@
     function predictHousePrice() {
       updateFormOnSubmit();
       var data = {
-        squareFeet: parseInt(document.getElementById('square_feet').value),
-        numBedrooms: parseInt(document.getElementById('num_bedrooms').value),
+        squareFeet: parseInt(document.getElementById('District').value),
+        numBedrooms: parseInt(document.getElementById('State').value),
         color: document.getElementById('color').value
       };
-      // HTTP POST to /api/predictHousePrice
+      // HTTP POST to /api/predictbestyieldcrop
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', '/api/predictHousePrice', true);
+      xhr.open('POST', '/api/predictbestyieldcrop', true);
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
@@ -61,28 +61,17 @@
 
 <body onload="bodyLoaded();">
   <div class="container">
-    <div id="header" class="row">Watson Machine Learning Scoring Demo</div>
+    <div id="header" class="row">OPTIMUM YIELD CROP PREDICTION FOR A DISTRICT</div>
     <div class="row">
-      <div class="input-field col s12">
-        <label for="square_feet">Square Feet</label>
-        <input id="square_feet" type="number" value="2400" required>
+      <div class="input-field col s10">
+        <label for="District"> State </label>
+        <input id="District" type="string" required>
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s12">
-        <label for="num_bedrooms">Number of Bedrooms</label>
-        <input id="num_bedrooms" type="number" value="4" required>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <select id="color">
-          <option value="White">White</option>
-          <option value="Brown">Brown</option>
-          <option value="Blue">Blue</option>
-          <option value="Yellow">Yellow</option>
-        </select>
-        <label for="color">Color</label>
+      <div class="input-field col s10">
+        <label for="State"> District  </label>
+        <input id="State" type="string"  required>
       </div>
     </div>
     <div class="row">

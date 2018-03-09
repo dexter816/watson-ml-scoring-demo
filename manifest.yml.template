@@ -5,8 +5,8 @@ applications:
   memory: 128M
   instances: 1
   domain: mybluemix.net
-  name: watson-ml-scoring-demo
-  host: watson-ml-scoring-demo-${random-word}
+  name: OPTIMUM YIELD CROP PREDICTION FOR A DISTRICT
+  host: watson-ml-yieldpredictor-demo-${random-word}
 disk_quota: 256M
 services:
  - IBM Watson Machine Learning
